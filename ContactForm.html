@@ -13,9 +13,9 @@
         width: 800px;
         min-height: 600px;
         padding: 24px;
-        background: lightcoral;
+        background: white;
         margin: 36px auto;
-        border: 3px solid tomato;
+        border: 3px solid maroon;
         box-shadow: 2px 3px 6px gray;
         border-radius: 18px;
         font: 16pt/1.2em 'Itim';
@@ -33,7 +33,7 @@
         font-size: 16px;
         border-radius: 30px;
         padding: 8px 10px;
-        background: gainsboro;
+        background: white;
 		margin-top: 20px;
 		text-indent: 30px;
 		color: gray;
@@ -45,7 +45,7 @@
         width: 400px;
         height: 40px;
         margin-top: 50px;
-        background: tomato;
+        background: seagreen;
         color: white;
         font-size: 18px;
         font-family: "Itim";
@@ -54,12 +54,48 @@
         cursor: pointer;
         transition: background 0.3s ease;
 	} input[type="submit"]:hover {
-		background: crimson;
-	} 
+		background: goldenrod;
+	} #menu-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: maroon;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Nova Square';
+        color: white;
+        font-size: 14px;
+        z-index: 999;
+    } #menu {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #254f38;
+        padding: 10px 20px;
+        border-radius: 6px;
+        display: none;
+        z-index: 999;
+    } #menu a {
+        display: block;
+        margin: 8px 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'Nova Square';
+        font-size: 14px;
+    }
 </style>
 </head>
 
 <body>
+	<div id="page">
+        <div id="menu-button">☰ Menu</div>
+        <div id="menu">
+            <a href="#">Home</a>
+            <a href="#">About Me</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
     <form action="#" method="post">
     <h1>CONTACT US</h1>
 	<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
@@ -71,6 +107,14 @@
 		</div>
 	<img src="Airplane.png"
     </form>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menu-button").click(function() {
+                $("#menu").slideToggle();
+            });
+        });
+    </script>
 </body>
 </html>
 
